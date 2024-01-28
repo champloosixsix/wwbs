@@ -258,4 +258,60 @@
    */
   new PureCounter();
 
+  /* Turning the divs into links */
+
+  const divLink1 = document.querySelector('#divLink1');
+  divLink1.addEventListener('click', function() {
+    console.log('div was clicked');
+    var anchor = document.querySelector('#divLink1 a');
+    var href = anchor.getAttribute('href');
+    console.log(href);
+    window.location = href;
+  });
+
+  const divLink2 = document.querySelector('#divLink2');
+  divLink2.addEventListener('click', function() {
+    console.log('div was clicked');
+    var anchor = document.querySelector('#divLink2 a');
+    var href = anchor.getAttribute('href');
+    console.log(href);
+    window.location = href;
+  });
+
+  const divLink3 = document.querySelector('#divLink3');
+  divLink3.addEventListener('click', function() {
+    console.log('div was clicked');
+    var anchor = document.querySelector('#divLink3 a');
+    var href = anchor.getAttribute('href');
+    console.log(href);
+    window.location = href;
+  });
+
+  const divLink4 = document.querySelector('#divLink4');
+  divLink4.addEventListener('click', function() {
+    console.log('div was clicked');
+    var anchor = document.querySelector('#divLink4 a');
+    var href = anchor.getAttribute('href');
+    console.log(href);
+    window.location = href;
+  });
+
+  const divLink5 = document.querySelector('#divLink5');
+  divLink5.addEventListener('click', function() {
+    console.log('div was clicked');
+    var anchor = document.querySelector('#divLink5 a');
+    var href = anchor.getAttribute('href');
+    console.log(href);
+    window.location = href;
+  });
+
+  const divLink6 = document.querySelector('#divLink6');
+  divLink6.addEventListener('click', function() {
+    console.log('div was clicked');
+    var anchor = document.querySelector('#divLink6 a');
+    var href = anchor.getAttribute('href');
+    console.log(href);
+    window.location = href;
+  });
+
 })()
