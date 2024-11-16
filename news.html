@@ -25,6 +25,31 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    /* Add this CSS to your existing styles */
+    .flex-container {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) { /* Adjust the max-width value as necessary for your design */
+      .flex-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+      }
+
+      .flex-container div {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add some space below the image */
+      }
+      .text-container p {
+        max-width: 100vw !important;
+        margin: 0 !important;
+        margin-top: 30px !important;
+
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -74,7 +99,30 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
-
+    <section class="">
+      <div class="container" id="estate">  
+        <h1 style="color: #3498db">Upcoming Event!</h1>
+        <br>
+        <div class="flex-container">
+          <div class="image-container">
+            <img src="assets/img/9696e569-57ed-4e12-a9b7-4f1ab6ceb77d.jpg" style="max-width: 300px; height: auto; cursor: pointer;" onclick="openModal();">
+          </div>
+          <div class="text-container">
+            <p style="max-width: 500px; margin: 100px;">
+              Join us in celebrating a decade of excellence at the DRHC Healthcare Group! 
+              This milestone marks 10 remarkable years of dedication, care, and achievements. 
+              We warmly invite all staff and their families to come together for this special occasion. 
+              Click the image to learn more about the event details and how you can participate!
+            </p>
+          </div>
+        </div>
+        <div id="imageModal" class="modal" onclick="closeModal();">
+          <span class="close" onclick="closeModal();">&times;</span>
+          <img class="modal-content" id="modalImage">
+          <div id="caption"></div>
+        </div>
+      </div>
+    </section>
     <section class="inner-page section-bg">
       <div class="container" id="3m">
         <h1 style="color: #3498db">3M Earplug Lawsuit</h2>
@@ -193,6 +241,16 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function openModal() {
+      document.getElementById("imageModal").style.display = "block";
+      document.getElementById("modalImage").src = "assets/img/9696e569-57ed-4e12-a9b7-4f1ab6ceb77d.jpg"; // Set the image source
+    }
+    
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+    </script>
 
 </body>
 
