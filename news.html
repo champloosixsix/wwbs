@@ -298,7 +298,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-    <script>
+  <script>
     // VA Benefits News Integration
     async function loadVANews() {
       const newsContainer = document.getElementById('va-news-container');
@@ -308,11 +308,8 @@
         // Show loading
         loadingMessage.style.display = 'block';
         
-        // Using NewsAPI for VA-related news (you'll need to get a free API key)
-        const apiKey = '9405cac05d85476f9e97c3abef79bfd3'; // Replace with your actual API key
-        const vaNewsUrl = `https://newsapi.org/v2/everything?q=VA+veterans+affairs+benefits+disability&sortBy=publishedAt&language=en&pageSize=6&apiKey=${apiKey}`;
-        
-        const response = await fetch(vaNewsUrl);
+        // Use your PHP backend proxy instead of direct API call
+        const response = await fetch('/api/va-news.php');
         const data = await response.json();
         
         if (data.status === 'ok' && data.articles && data.articles.length > 0) {
@@ -354,22 +351,40 @@
       // Static relevant VA news as fallback
       const fallbackNews = [
         {
-          title: "VA Disability Rating Changes for 2024",
-          description: "Important updates to VA disability rating schedules and compensation rates.",
-          date: "2024-01-15",
+          title: "VA Disability Rating Changes for 2025",
+          description: "Important updates to VA disability rating schedules and compensation rates for the new year.",
+          date: "2025-01-15",
           url: "https://www.va.gov/disability/compensation-rates/"
         },
         {
-          title: "New PACT Act Benefits Available",
-          description: "Veterans exposed to burn pits and other toxic substances may be eligible for new benefits.",
-          date: "2024-01-10",
+          title: "PACT Act Benefits Expansion Continues",
+          description: "Veterans exposed to burn pits and other toxic substances continue to receive expanded benefits coverage.",
+          date: "2025-01-10",
           url: "https://www.va.gov/resources/the-pact-act-and-your-va-benefits/"
         },
         {
           title: "VA Healthcare Enrollment Updates",
-          description: "Recent changes to VA healthcare enrollment and eligibility requirements.",
-          date: "2024-01-05",
+          description: "Recent changes to VA healthcare enrollment and eligibility requirements for 2025.",
+          date: "2025-01-05",
           url: "https://www.va.gov/healthcare/how-to-apply/"
+        },
+        {
+          title: "New DBQ Forms Available",
+          description: "Updated Disability Benefits Questionnaires now available to strengthen your VA claim.",
+          date: "2025-01-03",
+          url: "https://www.va.gov/disability/dbd-questionnaires/"
+        },
+        {
+          title: "VA Mental Health Services Expansion",
+          description: "Expanded mental health services and resources now available for veterans and their families.",
+          date: "2025-01-01",
+          url: "https://www.va.gov/health-care/health-needs-conditions/mental-health/"
+        },
+        {
+          title: "Veterans Choice Program Updates",
+          description: "Important updates to the Veterans Choice Program and community care options.",
+          date: "2024-12-28",
+          url: "https://www.va.gov/communitycare/"
         }
       ];
       
