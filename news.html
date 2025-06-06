@@ -49,6 +49,46 @@
 
       }
     }
+      /* VA News Styles */
+  .news-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .news-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+  
+  .news-title {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .news-title:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+  
+  .news-date {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .news-source {
+    background: #3498db;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-right: 10px;
+  }
   </style>
 </head>
 
@@ -99,6 +139,23 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
+        <!-- New VA Benefits News Section -->
+    <section class="section-bg">
+      <div class="container">
+        <h1 style="color: #3498db">Latest VA Benefits News</h1>
+        <p class="mb-4">Stay informed about the latest updates, changes, and announcements affecting veterans' benefits and services.</p>
+        
+        <div id="va-news-container" class="row">
+          <!-- Loading message -->
+          <div id="loading-message" class="col-12 text-center">
+            <p>Loading latest VA news...</p>
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="">
       <div class="container" id="estate">  
         <h1 style="color: #3498db">Upcoming Event!</h1>
@@ -241,6 +298,101 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+    <script>
+    // VA Benefits News Integration
+    async function loadVANews() {
+      const newsContainer = document.getElementById('va-news-container');
+      const loadingMessage = document.getElementById('loading-message');
+      
+      try {
+        // Show loading
+        loadingMessage.style.display = 'block';
+        
+        // Using NewsAPI for VA-related news (you'll need to get a free API key)
+        const apiKey = '9405cac05d85476f9e97c3abef79bfd3'; // Replace with your actual API key
+        const vaNewsUrl = `https://newsapi.org/v2/everything?q=VA+veterans+affairs+benefits+disability&sortBy=publishedAt&language=en&pageSize=6&apiKey=${apiKey}`;
+        
+        const response = await fetch(vaNewsUrl);
+        const data = await response.json();
+        
+        if (data.status === 'ok' && data.articles && data.articles.length > 0) {
+          displayNews(data.articles);
+        } else {
+          // Fallback to static relevant news
+          displayFallbackNews();
+        }
+        
+      } catch (error) {
+        console.error('Error fetching VA news:', error);
+        displayFallbackNews();
+      } finally {
+        loadingMessage.style.display = 'none';
+      }
+    }
+    
+    function displayNews(articles) {
+      const newsContainer = document.getElementById('va-news-container');
+      
+      newsContainer.innerHTML = articles.map(article => `
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="news-item">
+            <div class="mb-2">
+              <span class="news-source">VA News</span>
+              <span class="news-date">${new Date(article.publishedAt).toLocaleDateString()}</span>
+            </div>
+            <h4><a href="${article.url}" target="_blank" class="news-title">${article.title}</a></h4>
+            <p class="mt-2">${article.description || 'Click to read more about this VA benefits update.'}</p>
+            <small class="text-muted">Source: ${article.source.name}</small>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    function displayFallbackNews() {
+      const newsContainer = document.getElementById('va-news-container');
+      
+      // Static relevant VA news as fallback
+      const fallbackNews = [
+        {
+          title: "VA Disability Rating Changes for 2024",
+          description: "Important updates to VA disability rating schedules and compensation rates.",
+          date: "2024-01-15",
+          url: "https://www.va.gov/disability/compensation-rates/"
+        },
+        {
+          title: "New PACT Act Benefits Available",
+          description: "Veterans exposed to burn pits and other toxic substances may be eligible for new benefits.",
+          date: "2024-01-10",
+          url: "https://www.va.gov/resources/the-pact-act-and-your-va-benefits/"
+        },
+        {
+          title: "VA Healthcare Enrollment Updates",
+          description: "Recent changes to VA healthcare enrollment and eligibility requirements.",
+          date: "2024-01-05",
+          url: "https://www.va.gov/healthcare/how-to-apply/"
+        }
+      ];
+      
+      newsContainer.innerHTML = fallbackNews.map(article => `
+        <div class="col-lg-6 col-md-12 mb-4">
+          <div class="news-item">
+            <div class="mb-2">
+              <span class="news-source">VA Benefits</span>
+              <span class="news-date">${new Date(article.date).toLocaleDateString()}</span>
+            </div>
+            <h4><a href="${article.url}" target="_blank" class="news-title">${article.title}</a></h4>
+            <p class="mt-2">${article.description}</p>
+            <small class="text-muted">Source: VA.gov</small>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    // Load news when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadVANews();
+    });
+  </script>
   <script>
     function openModal() {
       document.getElementById("imageModal").style.display = "block";
