@@ -1,417 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>WWBS - Testimonials</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-  <title>WWBS - Testimonials</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-
-      <div class="logo me-auto">
-        <h1><a href="/index.html">WWBS</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="/#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="/#about">About</a></li>
-          <li><a class="nav-link scrollto" href="/#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="/news.html">News</a></li>
-          <li><a class="nav-link scrollto" href="/#testimonials">Testimonials</a></li>
-          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="header-social-links d-flex align-items-center">
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      </div>
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs" style="background-image: url('assets/img/hero-banner.jpg'); height: 250px;">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2 style="color: white">Testimonials</h2>
-          <ol>
-            <li><a href="/index.html">Home</a></li>
-            <li style="color: white">Testimonials</li>
-          </ol>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center">
+        <div class="logo me-auto">
+          <h1><a href="/index.html">WWBS</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto" href="/#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="/#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="/news.html">News</a></li>
+            <li>
+              <a class="nav-link scrollto" href="/#testimonials"
+                >Testimonials</a
+              >
+            </li>
+            <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
 
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>Hear what others have to say!</p>
+        <div class="header-social-links d-flex align-items-center">
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         </div>
+      </div>
+    </header>
+    <!-- End Header -->
 
-        <div class="swiper-pagination"></div>
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I retired in 1996 with a VA rating of 20%. I heard about Mr. Lewis from a friend so
-I contacted him. After our conversation he said he would help me. Mr. Lewis took
-me step by step filing my claim on Ebenefits web site because I was lost. Mr.
-Lewis put me on the correct path and with his help in filing my claim I went from a
-20% to a 70% rating. His understanding a knowledge is in great demand many
-veterans could benefit from a person like him. I highly recommend anyone that is
-having a difficult time putting together a claim to contact him.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Donnie</h3>
-                <h4>70% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had previously filed a VA disability Claim in 2009 when I got out of the military but had been
-                  denied due to my failure to complete the process. I was already evaluated but no rating was
-                  established. The reason(s) for not completing the process at the time was, an employment
-                  opportunity in Kuwait presented itself and I had to leave, and the process was never
-                  completed.
-                  
-                  10 years later, in August 2018, I was introduced to Mr. Willie Lewis as a VA Specialist who was
-                  willing to render his services for a fee. He was very gracious in helping me re-open my VA
-                  disability Claims. After a year of medical examination and evaluation, I was awarded a 100%
-                  disability rating from the veteran Administration. I would like to take this opportunity to
-                  express my deepest gratitude to Mr. Lewis for his assistance in helping me navigate the process
-                  which led to a successful resolution. All praises be to Allah.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Harouna</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I would like to take this opportunity to express my deepest gratitude to one of our own--a
-Veteran, that has really made a difference for us here in Kuwait. I've been in this country
-for over four years, and I must say that when anyone has a need for Veterans Assistance
-they MUST reach out to Mr. Willie Lewis. He is a true Professional and great source of
-insight and information when dealing with the Veterans Administration. His
-comprehension with the processes and procedures are instrumental in reaching favorable
-outcomes with VA claims—a testaments of his vast knowledge and experience. I say this
-because within a 90 day period, Mr. Lewis was able to get me a 60% rating, for starters.
-Throughout the process he guided me without a fail to identify injuries, which I never
-thought would be considered for a claim. I have always heard many of my comrades
-talked of VA claims and the difficulties it has been to reach positive outcome. Well, am
-here to tell you that Willie “Lew” Lewis is the key to getting your VA claims resolved
-satisfactorily. He has made a difference for me and I am sure he’ll make a difference for
-you as well. My aim, with the assistance of Willie Lewis, is to gradually achieve a 100%
-rating. He has been a great source of knowledge and help beyond expectations.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/AirForce-logo.png" class="testimonial-img" alt="">
-                <h3>Jaime</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Hello All!
-I just wanted to take a few minutes of your time. 
-I started this journey 23 years ago. Trying to get my 100% disability from the Military. I went from the following percentage 60%, 80%, and 90% for a very long time. I just settled with that amount. My cousin Walter   told me to try this guy. I have spent so much money trying to get my 100%.  Told my cousin that I would try this guy. Well God be the Glory in 90 days after work with this guy. I got my 100%. 
-To anyone that wants help with filing their  military  disability claims. This guy can do wonders. His name is Willie Lewis. Thank you Willie for helping me. I will pass your information to anyone that wants help. Thanks again cousin Walt and Mr. Willie Lewis. God be the Glory!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/Emblem_of_the_United_States_Navy.svg.png" class="testimonial-img" alt="">
-                <h3>Gloria</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had been working with VA for 14 years. A friend Referred me to Mr. Lewis and
-he got the ball rolling. Mr. Lewis was knowledgeable and professional throughout
-the entire process. I got my 100% rating within 1 year! I can’t thank Mr. Lewis and
-his team enough. I’m so thankful, and I highly recommend Mr. Lewis.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Walter</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Thank you for all that you have done and dedication towards helping me obtain 100%. When I started the process in 2018, I was only at a 70% rating, but with your assistance I am now 100% rated as a result of following your words of advice and trusting you wholeheartedly throughout the process. Thank you again for helping my family and I obtain what we deserved through our time with the military.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Andre</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  When it comes to Veterans Assistance in Kuwait, there are loads of unqualified non-veterans
-that talk a good game, but Mr. Willie Lewis help you make it happen. His 20 plus years of
-experience in the military and immediate dealings with VA offers a wealth of knowledge in the
-process and procedures of getting positive results in claim and other features. My personal
-dealings with Mr. Lewis got me a 60% rating in less than 90 days and now | am at 80% with
-other processes pending. He has enabled me, coached me and gave me the proper guidance to
-disseminate this story widely due to his expertise. It's engaging Soldiers and veterans alike
-which bring great results. | personally recommend Mr. Lewis as a point of contact for any
-dealings with the Veterans Administration and his consultant service fee is nothing compared
-to what your results will be in the end.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Craig</h3>
-                <h4>80% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Thank you for all of your hard work & dedication towards helping me obtain an accurate disability rating of 100%. When I started the process 2 years ago, I was at a mere 10% rating, but with your assistance I am now 100% rated as a result of your diligence. Thank you again for helping my family and I obtain what I earned as a result of my military service.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/Emblem_of_the_United_States_Navy.svg.png" class="testimonial-img" alt="">
-                <h3>Tarryl</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  In September 2017 I finally filed for compensation with assistance from a DAV Rep. In March 2018, all 7 disability claims were denied. I requested & received my service and medical records in October 2018, and with the help of Mr Lewis and his Company I was able to  file my Fully Developed Claims on 11 March 2019. For my first FDC for PTSD, I was scheduled for a C&P Exam & attended it on 07 April. On 16 April, I received my DVA letter awarding me 30%! So far, all 7 of my FDC's are progressing through "the system". Again, it took a lot of research, time, & documentation to put the FDC's together; but Mr. Lewis was with me every step of the way, talking to me, telling me how to file everything, and how to understand the steps of the VA. The end results are very positive. And now I am at 80%....<br>
-
-Thank you Lew you are the very Best.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Felton</h3>
-                <h4>80% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Thanks to Mr. Lewis, I went from 0% to 70% disability rating with just one claim decision, a remarkable achievement considering my previous setbacks. With other claims still pending, I have complete confidence that Mr. Lewis will continue to fight tirelessly on my behalf.<br>
-
-                  I cannot recommend Mr. Lewis and Wounded Warrior Battle Systems highly enough. If you're navigating the VA disability claims process, look no further. Mr. Lewis is a true advocate who goes above and beyond to ensure veterans receive the benefits they deserve.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Sean</h3>
-                <h4>70% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I am a young veteran with service-connected PTSD from serving in the US Army. The VA had purposely excluded multiple symptoms from my C&P Exam and supporting documents, and gave me an unfairly low disability rating. Feeling discouraged and betrayed by the system, I reached out to multiple companies to help me with the strenous VA appeal process. Since I am a young veteran, every company I spoke with declined my case because of their contingency fee would be smaller due to me being recently seperated from Active Duty. Thankfully, Wounded Warrior Battle Systems took my case because he honestly wants to help veterans, and isn't in it just for the money. It took over 6 months to resolve, but in the end I won my appeal. Wounded Warrior Battle Systems was amazing to work with along the way. If I had not worked with them, i would have given up a long time ago. Thank you Wounded Warrior Battle Systems, so much!<br>
-
-                  I cannot recommend Mr. Lewis and Wounded Warrior Battle Systems highly enough. If you're navigating the VA disability claims process, look no further. Mr. Lewis is a true advocate who goes above and beyond to ensure veterans receive the benefits they deserve.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Kayteria</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Veterans, I highly recommend you to contact Mr. Willie Lewis and his team at Wounded Warriors Battle Systems.<br>
-                  I started this process 24 years ago and was denied each time. My brother introduced me to Mr. Willie in late 2021 and I received a 60% rating in 4 months of working with him. In mid-2023, I received my 100% rating!<br>
-                  Mr. Lewis is very knowledgeable, patient, passionate, and dedicated to helping veterans.<br>
-                  Thank you Mr. Lewis and Team WWBS!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Kiona</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  For over a decade, I lived with a 20% disability rating, knowing deep down that I deserved so much more. I fought alone, faced rejection and eventually gave up—frustrated and hopeless. The system was frustrating, confusing, and overwhelming.
-                  Then, I met Mr. Lewis. From our first conversation, I knew things were going to be different. His confidence, expertise, and genuine dedication to helping veterans gave me something I had lost—hope. He walked me through every step of the process, making sure my claim was strong, thorough, and undeniable. With the support of Wounded Warrior Battle Systems, my paperwork was submitted, and within just six months, I was awarded the 100% rating I had been fighting for all those years.
-                  I can’t express how much this has changed my life. If you're a veteran struggling with your claim, don’t fight alone. Mr. Lewis and his team truly care, and they get results. I highly recommend them to anyone seeking the benefits and compensation they rightfully deserve.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>Diane Harris</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item pb-4">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  As a 7-year Army veteran, I had struggled with getting my VA claims approved. After two previous denials—one I submitted on my own and another through a different company—I was feeling frustrated and discouraged. That all changed when I reached out to Mr. Willie Lewis in September of last year.
-
-                  What truly set him apart was his speed and efficiency—he submitted all of my claims within 24 hours! Thanks to his expertise and dedication, my claims were processed smoothly, and by January, I was awarded 60% disability. To my amazement, by March, I had reached 100%!
-
-                  Mr. Lewis is truly making a difference for veterans, and I wholeheartedly recommend his services to anyone in need of assistance with their VA claims. He is knowledgeable, compassionate, and genuinely committed to helping veterans receive the benefits they deserve. Thank you, Mr. Lewis, for everything you have done for me and so many others!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/army.jpeg" class="testimonial-img" alt="">
-                <h3>SPC Quinton L.</h3>
-                <h4>100% Status</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <section
+        class="breadcrumbs"
+        style="
+          background-image: url('assets/img/hero-banner.jpg');
+          height: 250px;
+        "
+      >
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 style="color: white">Testimonials</h2>
+            <ol>
+              <li><a href="/index.html">Home</a></li>
+              <li style="color: white">Testimonials</li>
+            </ol>
           </div>
-
         </div>
+      </section>
+      <!-- End Breadcrumbs -->
 
-      </div>
-    </section><!-- End Testimonials Section -->
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>WWBS</h3>
+      <section id="testimonials" class="testimonials section-bg">
+        <div class="container">
+          <!-- WWBS 100% Hall of Fame Section -->
+          <div class="section-title">
+            <h2>WWBS 100% Hall of Fame</h2>
             <p>
-              300 Colonial Center Pkwy <br>
-              Roswell, GA 30076<br>
-              United States <br><br>
-              <strong>Phone:</strong> (678) 456-4875<br>
-              <strong>Email:</strong> info@wwbattlesystems.com<br>
+              Celebrating our veterans who achieved 100% disability ratings!
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/tos.html">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/pripol.html">Privacy policy</a></li>
-            </ul>
+          <div
+            class="testimonials-slider swiper"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    I had previously filed a VA disability Claim in 2009 when I
+                    got out of the military but had been denied due to my
+                    failure to complete the process. I was already evaluated but
+                    no rating was established. The reason(s) for not completing
+                    the process at the time was, an employment opportunity in
+                    Kuwait presented itself and I had to leave, and the process
+                    was never completed. 10 years later, in August 2018, I was
+                    introduced to Mr. Willie Lewis as a VA Specialist who was
+                    willing to render his services for a fee. He was very
+                    gracious in helping me re-open my VA disability Claims.
+                    After a year of medical examination and evaluation, I was
+                    awarded a 100% disability rating from the veteran
+                    Administration. I would like to take this opportunity to
+                    express my deepest gratitude to Mr. Lewis for his assistance
+                    in helping me navigate the process which led to a successful
+                    resolution. All praises be to Allah.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/army.jpeg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Harouna</h3>
+                  <h4>100% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    I would like to take this opportunity to express my deepest
+                    gratitude to one of our own--a Veteran, that has really made
+                    a difference for us here in Kuwait. I've been in this
+                    country for over four years, and I must say that when anyone
+                    has a need for Veterans Assistance they MUST reach out to
+                    Mr. Willie Lewis. He is a true Professional and great source
+                    of insight and information when dealing with the Veterans
+                    Administration. His comprehension with the processes and
+                    procedures are instrumental in reaching favorable outcomes
+                    with VA claims—a testaments of his vast knowledge and
+                    experience. I say this because within a 90 day period, Mr.
+                    Lewis was able to get me a 60% rating, for starters.
+                    Throughout the process he guided me without a fail to
+                    identify injuries, which I never thought would be considered
+                    for a claim. I have always heard many of my comrades talked
+                    of VA claims and the difficulties it has been to reach
+                    positive outcome. Well, am here to tell you that Willie
+                    "Lew" Lewis is the key to getting your VA claims resolved
+                    satisfactorily. He has made a difference for me and I am
+                    sure he'll make a difference for you as well. My aim, with
+                    the assistance of Willie Lewis, is to gradually achieve a
+                    100% rating. He has been a great source of knowledge and
+                    help beyond expectations.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/AirForce-logo.png"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Jaime</h3>
+                  <h4>100% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Hello All! I just wanted to take a few minutes of your time.
+                    I started this journey 23 years ago. Trying to get my 100%
+                    disability from the Military. I went from the following
+                    percentage 60%, 80%, and 90% for a very long time. I just
+                    settled with that amount. My cousin Walter told me to try
+                    this guy. I have spent so much money trying to get my 100%.
+                    Told my cousin that I would try this guy. Well God be the
+                    Glory in 90 days after work with this guy. I got my 100%. To
+                    anyone that wants help with filing their military disability
+                    claims. This guy can do wonders. His name is Willie Lewis.
+                    Thank you Willie for helping me. I will pass your
+                    information to anyone that wants help. Thanks again cousin
+                    Walt and Mr. Willie Lewis. God be the Glory!
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/Emblem_of_the_United_States_Navy.svg.png"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Gloria</h3>
+                  <h4>100% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    I had been working with VA for 14 years. A friend Referred
+                    me to Mr. Lewis and he got the ball rolling. Mr. Lewis was
+                    knowledgeable and professional throughout the entire
+                    process. I got my 100% rating within 1 year! I can't thank
+                    Mr. Lewis and his team enough. I'm so thankful, and I highly
+                    recommend Mr. Lewis.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/army.jpeg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Walter</h3>
+                  <h4>100% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Thank you for all that you have done and dedication towards
+                    helping me obtain 100%. When I started the process in 2018,
+                    I was only at a 70% rating, but with your assistance I am
+                    now 100% rated as a result of following your words of advice
+                    and trusting you wholeheartedly throughout the process.
+                    Thank you again for helping my family and I obtain what we
+                    deserved through our time with the military.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/army.jpeg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Andre</h3>
+                  <h4>100% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- End 100% Hall of Fame Section -->
+
+      <!-- Regular Testimonials Section -->
+      <section id="regular-testimonials" class="testimonials">
+        <div class="container">
+          <div class="section-title">
+            <h2>Client Testimonials</h2>
+            <p>
+              Hear what our veterans have to say about their journey with us!
+            </p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/services-details.html#benefits">Benefits Consulting</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/services-details.html#outsourcing">Outsourcing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/services-details.html#estate">Estate Planning</a></li>
-            </ul>
-          </div>
+          <div
+            class="testimonials-slider swiper"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    I retired in 1996 with a VA rating of 20%. I heard about Mr.
+                    Lewis from a friend so I contacted him. After our
+                    conversation he said he would help me. Mr. Lewis took me
+                    step by step filing my claim on Ebenefits web site because I
+                    was lost. Mr. Lewis put me on the correct path and with his
+                    help in filing my claim I went from a 20% to a 70% rating.
+                    His understanding a knowledge is in great demand many
+                    veterans could benefit from a person like him. I highly
+                    recommend anyone that is having a difficult time putting
+                    together a claim to contact him.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/army.jpeg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Donnie</h3>
+                  <h4>70% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Stay updated with news from the Wounded Warrior Battle Systems Team!</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+              <div class="swiper-slide">
+                <div class="testimonial-item pb-4">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    When it comes to Veterans Assistance in Kuwait, there are
+                    loads of unqualified non-veterans that talk a good game, but
+                    Mr. Willie Lewis help you make it happen. His 20 plus years
+                    of experience in the military and immediate dealings with VA
+                    offers a wealth of knowledge in the process and procedures
+                    of getting positive results in claim and other features. My
+                    personal dealings with Mr. Lewis got me a 60% rating in less
+                    than 90 days and now | am at 80% with other processes
+                    pending. He has enabled me, coached me and gave me the
+                    proper guidance to disseminate this story widely due to his
+                    expertise. It's engaging Soldiers and veterans alike which
+                    bring great results. | personally recommend Mr. Lewis as a
+                    point of contact for any dealings with the Veterans
+                    Administration and his consultant service fee is nothing
+                    compared to what your results will be in the end.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/army.jpeg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Craig</h3>
+                  <h4>80% Status</h4>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
 
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>WWBS</h3>
+              <p>
+                300 Colonial Center Pkwy <br />
+                Roswell, GA 30076<br />
+                United States <br /><br />
+                <strong>Phone:</strong> (678) 456-4875<br />
+                <strong>Email:</strong> info@wwbattlesystems.com<br />
+              </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="/">Home</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/#about">About us</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/#services">Services</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/tos.html">Terms of service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/pripol.html">Privacy policy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/services-details.html#benefits"
+                    >Benefits Consulting</a
+                  >
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/services-details.html#outsourcing">Outsourcing</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/services-details.html#estate">Estate Planning</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Join Our Newsletter</h4>
+              <p>
+                Stay updated with news from the Wounded Warrior Battle Systems
+                Team!
+              </p>
+              <form action="" method="post">
+                <input type="email" name="email" /><input
+                  type="submit"
+                  value="Subscribe"
+                />
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="container d-md-flex py-4">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Wounded Warrior Battle Systems</span></strong>. All Rights Reserved
+      <div class="container d-md-flex py-4">
+        <div class="me-md-auto text-center text-md-start">
+          <div class="copyright">
+            &copy; Copyright
+            <strong><span>Wounded Warrior Battle Systems</span></strong
+            >. All Rights Reserved
+          </div>
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+          <a
+            href="https://www.instagram.com/woundedwarriorbattlesystems/"
+            class="instagram"
+            ><i class="bx bxl-instagram"></i
+          ></a>
         </div>
       </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="https://www.instagram.com/woundedwarriorbattlesystems/" class="instagram"><i class="bx bxl-instagram"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+    </footer>
+    <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
