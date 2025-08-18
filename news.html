@@ -156,6 +156,24 @@
         </div>
       </div>
     </section>
+    <!-- Substack CTA Section -->
+    <section class="inner-page">
+      <div class="container text-center">
+        <div class="section-title">
+          <h2>Want More VA Benefits Insights?</h2>
+          <p>Join our monthly Substack for guides, updates, and resources curated by WWBS.</p>
+        </div>
+        <a
+          class="btn btn-primary btn-lg"
+          href="https://substack.com/@wwbattle"
+          target="_blank"
+          rel="noopener"
+        >
+          Subscribe <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+        <p class="mt-2"><small>Cancel anytime. New posts monthly.</small></p>
+      </div>
+    </section>
         <section class="inner-page section-bg">
       <div class="container" id="estate">  
         <h1 style="color: #3498db">Upcoming Event!</h1>
@@ -288,12 +306,15 @@ Happy Father Day my brother.
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Stay updated with news from the Wounded Warrior Battle Systems Team!</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+          <div class="col-lg-4 col-md-6 footer-newsletter text-center">
+            <h4>Subscribe</h4>
+            <p>Get monthly VA claims insights, benefits updates, and resources from WWBS on Substack.</p>
+            <a
+              class="btn btn-primary"
+              href="https://substack.com/@wwbattle"
+              target="_blank"
+              rel="noopener"
+            >Subscribe</a>
           </div>
 
         </div>
@@ -376,43 +397,43 @@ Happy Father Day my brother.
     function displayFallbackNews() {
       const newsContainer = document.getElementById('va-news-container');
       
-      // Static relevant VA news as fallback
+      // Updated VA news as fallback - August 2025
       const fallbackNews = [
         {
-          title: "VA Disability Rating Changes for 2025",
-          description: "Important updates to VA disability rating schedules and compensation rates for the new year.",
+          title: "VA Compensation Rate Increase for 2025",
+          description: "Veterans will see a 2.5% cost-of-living adjustment (COLA) in their disability compensation starting December 1, 2024, affecting payments beginning in January 2025.",
           date: "2025-01-15",
           url: "https://www.va.gov/disability/compensation-rates/"
         },
         {
-          title: "PACT Act Benefits Expansion Continues",
-          description: "Veterans exposed to burn pits and other toxic substances continue to receive expanded benefits coverage.",
-          date: "2025-01-10",
+          title: "PACT Act Continues Expanding Benefits Coverage",
+          description: "More conditions added to presumptive list for veterans exposed to burn pits and Agent Orange. New respiratory conditions and cancers now covered under PACT Act provisions.",
+          date: "2025-01-12",
           url: "https://www.va.gov/resources/the-pact-act-and-your-va-benefits/"
         },
         {
-          title: "VA Healthcare Enrollment Updates",
-          description: "Recent changes to VA healthcare enrollment and eligibility requirements for 2025.",
-          date: "2025-01-05",
-          url: "https://www.va.gov/healthcare/how-to-apply/"
-        },
-        {
-          title: "New DBQ Forms Available",
-          description: "Updated Disability Benefits Questionnaires now available to strengthen your VA claim.",
-          date: "2025-01-03",
-          url: "https://www.va.gov/disability/dbd-questionnaires/"
-        },
-        {
-          title: "VA Mental Health Services Expansion",
-          description: "Expanded mental health services and resources now available for veterans and their families.",
-          date: "2025-01-01",
+          title: "New Mental Health Telehealth Programs Launch",
+          description: "VA expands virtual mental health services with new telehealth programs specifically designed for rural veterans and those with mobility challenges.",
+          date: "2025-01-10",
           url: "https://www.va.gov/health-care/health-needs-conditions/mental-health/"
         },
         {
-          title: "Veterans Choice Program Updates",
-          description: "Important updates to the Veterans Choice Program and community care options.",
-          date: "2024-12-28",
-          url: "https://www.va.gov/communitycare/"
+          title: "Updated DBQ Forms Now Available for 2025",
+          description: "Veterans Affairs releases updated Disability Benefits Questionnaires with streamlined processes for PTSD, TBI, and musculoskeletal conditions.",
+          date: "2025-01-08",
+          url: "https://www.va.gov/disability/dbd-questionnaires/"
+        },
+        {
+          title: "VA Home Loan Program Enhancements",
+          description: "New improvements to VA home loan benefits include increased funding fee exemptions and expanded eligibility for surviving spouses.",
+          date: "2025-01-05",
+          url: "https://www.va.gov/housing-assistance/home-loans/"
+        },
+        {
+          title: "Caregiver Support Program Expansion",
+          description: "VA extends comprehensive caregiver benefits to pre-9/11 veterans, providing monthly stipends and healthcare coverage for family caregivers.",
+          date: "2025-01-03",
+          url: "https://www.va.gov/family-member-benefits/comprehensive-assistance-for-family-caregivers/"
         }
       ];
       
