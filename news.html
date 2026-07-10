@@ -139,7 +139,37 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
-        <!-- New VA Benefits News Section -->
+        <!-- Free Athletic Shoes Announcement -->
+    <section class="inner-page">
+      <div class="container" id="free-shoes">
+        <h1 style="color: #3498db">Get Free Athletic Shoes from the VA</h1>
+        <br>
+        <div class="flex-container">
+          <div class="image-container">
+            <img src="assets/img/shoes.jpg" style="max-width: 350px; height: auto; cursor: pointer;" onclick="openShoesModal();" alt="VA Get Free Athletic Shoes From VA poster">
+          </div>
+          <div class="text-container">
+            <p style="max-width: 500px; margin: 20px 0 0 40px;">
+              The VA has partnered with leading athletic brands (On, Brooks, New Balance, HOKA, ASICS, Saucony, Nike, adidas, PUMA, Mizuno, Reebok, and Under Armour) to help eligible Veterans stay active and healthy with a free pair of athletic shoes.
+            </p>
+            <ol style="max-width: 500px; margin-left: 40px;">
+              <li>Talk to your VA provider about your interest in athletic shoes.</li>
+              <li>If eligible, your provider places an order through the VA system.</li>
+              <li>You'll receive an email from VA with a link to redeem your shoes online (check spam/junk).</li>
+              <li>Click the link, create your account, and choose your brand, size, and style. Shipping is included.</li>
+              <li>Enjoy your new shoes!</li>
+            </ol>
+            <p style="max-width: 500px; margin-left: 40px;">Eligibility may vary. Talk to your VA care team, or call 1-800-698-2411 for more information. Visit <a href="https://www.va.gov/wholehealth" target="_blank" rel="noopener">va.gov/wholehealth</a> for more resources.</p>
+            <p style="max-width: 500px; margin-left: 40px;"><small>See our <a href="/tos.html#va-disclaimer">disclaimer</a> regarding VA-related materials shared on this site.</small></p>
+          </div>
+        </div>
+        <div id="shoesModal" class="modal" onclick="closeShoesModal();">
+          <span class="close" onclick="closeShoesModal();">&times;</span>
+          <img class="modal-content" src="assets/img/shoes.jpg" alt="VA Get Free Athletic Shoes From VA poster">
+        </div>
+      </div>
+    </section>
+    <!-- New VA Benefits News Section -->
     <section class="section-bg">
       <div class="container">
         <h1 style="color: #3498db">Latest VA Benefits News</h1>
@@ -397,43 +427,43 @@ Happy Father Day my brother.
     function displayFallbackNews() {
       const newsContainer = document.getElementById('va-news-container');
       
-      // Updated VA news as fallback - August 2025
+      // Updated VA news as fallback - July 2026
       const fallbackNews = [
         {
-          title: "VA Compensation Rate Increase for 2025",
-          description: "Veterans will see a 2.5% cost-of-living adjustment (COLA) in their disability compensation starting December 1, 2024, affecting payments beginning in January 2025.",
-          date: "2025-01-15",
-          url: "https://www.va.gov/disability/compensation-rates/"
+          title: "VA Claims Backlog Drops Below 70,000 for First Time Since 2020",
+          description: "The VA disability compensation and pension claims backlog has fallen below 70,000 for the first time since February 2020, a reduction of more than 74% since January 2025.",
+          date: "2026-07-08",
+          url: "https://www.legion.org/information-center/news/veterans-benefits/2026/july/va-benefits-claims-backlog-drops-below-70000-for-first-time-since-2020"
         },
         {
-          title: "PACT Act Continues Expanding Benefits Coverage",
-          description: "More conditions added to presumptive list for veterans exposed to burn pits and Agent Orange. New respiratory conditions and cancers now covered under PACT Act provisions.",
-          date: "2025-01-12",
+          title: "VA Processes 2 Million Disability Claims in Record Time",
+          description: "VA has reduced the average time to process a claim to a record-low 77.7 days, with more than 1 million claims decided in under 30 days since January 2025.",
+          date: "2026-07-07",
+          url: "https://news.va.gov/press-room/va-processes-2m-disability-benefits-claims-in-record-time-again/"
+        },
+        {
+          title: "VA Welcomes 200,000 New Healthcare Enrollees So Far in 2026",
+          description: "More than 200,000 veterans have newly enrolled in VA healthcare so far this year, reflecting continued growth in veterans seeking VA medical services.",
+          date: "2026-07-02",
+          url: "https://news.va.gov/press-room/va-welcomes-200000-new-healthcare-enrollees-so-far-in-2026/"
+        },
+        {
+          title: "2026 VA Disability Compensation Rates: 2.8% COLA in Effect",
+          description: "The 2.8% cost-of-living adjustment took effect December 1, 2025, raising monthly disability compensation, DIC, and Special Monthly Compensation payments for veterans and survivors.",
+          date: "2026-06-15",
+          url: "https://www.va.gov/disability/compensation-rates/veteran-rates/"
+        },
+        {
+          title: "PACT Act Presumptive Conditions List Continues to Grow",
+          description: "VA has added additional leukemias, genitourinary cancers, and hypertension to the list of PACT Act presumptive conditions, with another mandatory review cycle expected in August 2026.",
+          date: "2026-05-20",
           url: "https://www.va.gov/resources/the-pact-act-and-your-va-benefits/"
         },
         {
-          title: "New Mental Health Telehealth Programs Launch",
-          description: "VA expands virtual mental health services with new telehealth programs specifically designed for rural veterans and those with mobility challenges.",
-          date: "2025-01-10",
-          url: "https://www.va.gov/health-care/health-needs-conditions/mental-health/"
-        },
-        {
-          title: "Updated DBQ Forms Now Available for 2025",
-          description: "Veterans Affairs releases updated Disability Benefits Questionnaires with streamlined processes for PTSD, TBI, and musculoskeletal conditions.",
-          date: "2025-01-08",
-          url: "https://www.va.gov/disability/dbd-questionnaires/"
-        },
-        {
-          title: "VA Home Loan Program Enhancements",
-          description: "New improvements to VA home loan benefits include increased funding fee exemptions and expanded eligibility for surviving spouses.",
-          date: "2025-01-05",
-          url: "https://www.va.gov/housing-assistance/home-loans/"
-        },
-        {
-          title: "Caregiver Support Program Expansion",
-          description: "VA extends comprehensive caregiver benefits to pre-9/11 veterans, providing monthly stipends and healthcare coverage for family caregivers.",
-          date: "2025-01-03",
-          url: "https://www.va.gov/family-member-benefits/comprehensive-assistance-for-family-caregivers/"
+          title: "VA Announces Major Improvements in Benefits Processing and Delivery",
+          description: "VA outlines ongoing modernization efforts aimed at faster, more accurate claims decisions and improved service delivery for veterans nationwide.",
+          date: "2026-05-01",
+          url: "https://news.va.gov/press-room/va-announces-major-improvements-in-benefits-processing-and-delivery/"
         }
       ];
       
@@ -456,6 +486,15 @@ Happy Father Day my brother.
     document.addEventListener('DOMContentLoaded', function() {
       loadVANews();
     });
+  </script>
+  <script>
+    function openShoesModal() {
+      document.getElementById("shoesModal").style.display = "block";
+    }
+
+    function closeShoesModal() {
+      document.getElementById("shoesModal").style.display = "none";
+    }
   </script>
   <script>
     function openModal() {
