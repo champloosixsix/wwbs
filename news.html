@@ -89,6 +89,84 @@
     display: inline-block;
     margin-right: 10px;
   }
+
+  /* TDIU Comparison Styles */
+  .tdiu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .tdiu-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+    border-top: 4px solid #3498db;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .tdiu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+  .tdiu-card .tdiu-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75em;
+    color: #888;
+    margin-bottom: 4px;
+  }
+
+  .tdiu-card .tdiu-rating {
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1;
+  }
+
+  .tdiu-card .tdiu-current {
+    color: #666;
+    margin: 12px 0;
+    font-size: 0.95em;
+  }
+
+  .tdiu-card .tdiu-current strong {
+    color: #2c3e50;
+    font-size: 1.15em;
+  }
+
+  .tdiu-card .tdiu-arrow {
+    color: #3498db;
+    font-size: 1.4em;
+    margin: 4px 0;
+  }
+
+  .tdiu-card .tdiu-with {
+    font-size: 0.85em;
+    color: #666;
+  }
+
+  .tdiu-card .tdiu-with strong {
+    display: block;
+    font-size: 1.5em;
+    color: #27ae60;
+    font-weight: 700;
+  }
+
+  .tdiu-card .tdiu-gain {
+    margin-top: 14px;
+    background: #eafaf1;
+    color: #1e8449;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.95em;
+  }
   </style>
 </head>
 
@@ -139,6 +217,74 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
+
+    <!-- The Difference TDIU Makes -->
+    <section class="inner-page">
+      <div class="container" id="tdiu">
+        <h1 style="color: #3498db">The Difference TDIU Makes</h1>
+        <p class="mb-2">
+          TDIU pays the same as a 100% VA disability rating. If your
+          service-connected conditions keep you from holding down steady,
+          gainful work, you could be compensated at the full 100% rate even
+          when your combined rating is lower. Here's what that difference can
+          look like each month:
+        </p>
+
+        <div class="tdiu-grid">
+          <div class="tdiu-card">
+            <div class="tdiu-label">Current Rating</div>
+            <div class="tdiu-rating">60%</div>
+            <div class="tdiu-current">You receive<br><strong>$1,435/mo</strong></div>
+            <div class="tdiu-arrow"><i class="bi bi-arrow-down"></i></div>
+            <div class="tdiu-with">With TDIU<strong>$3,938/mo</strong></div>
+            <div class="tdiu-gain">+$2,503/mo</div>
+          </div>
+
+          <div class="tdiu-card">
+            <div class="tdiu-label">Current Rating</div>
+            <div class="tdiu-rating">70%</div>
+            <div class="tdiu-current">You receive<br><strong>$1,808/mo</strong></div>
+            <div class="tdiu-arrow"><i class="bi bi-arrow-down"></i></div>
+            <div class="tdiu-with">With TDIU<strong>$3,938/mo</strong></div>
+            <div class="tdiu-gain">+$2,130/mo</div>
+          </div>
+
+          <div class="tdiu-card">
+            <div class="tdiu-label">Current Rating</div>
+            <div class="tdiu-rating">80%</div>
+            <div class="tdiu-current">You receive<br><strong>$2,102/mo</strong></div>
+            <div class="tdiu-arrow"><i class="bi bi-arrow-down"></i></div>
+            <div class="tdiu-with">With TDIU<strong>$3,938/mo</strong></div>
+            <div class="tdiu-gain">+$1,836/mo</div>
+          </div>
+
+          <div class="tdiu-card">
+            <div class="tdiu-label">Current Rating</div>
+            <div class="tdiu-rating">90%</div>
+            <div class="tdiu-current">You receive<br><strong>$2,362/mo</strong></div>
+            <div class="tdiu-arrow"><i class="bi bi-arrow-down"></i></div>
+            <div class="tdiu-with">With TDIU<strong>$3,938/mo</strong></div>
+            <div class="tdiu-gain">+$1,576/mo</div>
+          </div>
+        </div>
+
+        <p class="mt-4">
+          <strong>What is TDIU?</strong> Total Disability Based on Individual
+          Unemployability (TDIU) is a VA benefit that pays eligible veterans at
+          the 100% disability rate even when their official combined rating is
+          lower. It is awarded when service-connected conditions prevent a
+          veteran from maintaining substantially gainful employment. If you
+          believe your disabilities are keeping you from working, you may
+          qualify — and WWBS can help you find out.
+        </p>
+        <p><small>Figures shown are for illustration and reflect base
+          monthly compensation for a single veteran with no dependents; your
+          actual amount may vary based on dependents and other factors. See our
+          <a href="/tos.html#va-disclaimer">disclaimer</a> regarding VA-related
+          materials shared on this site.</small></p>
+      </div>
+    </section>
+
         <!-- Free Athletic Shoes Announcement -->
     <section class="inner-page">
       <div class="container" id="free-shoes">
