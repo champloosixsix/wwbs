@@ -218,6 +218,47 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
+    <!-- Top 15 Hidden VA Benefits -->
+    <section class="inner-page">
+      <div class="container" id="hidden-benefits">
+        <h1 style="color: #3498db">Top 15 Hidden VA Benefits You May Qualify For</h1>
+        <br>
+        <div class="flex-container">
+          <div class="image-container">
+            <img src="assets/img/hidden-va-benefits.jpg" style="max-width: 350px; height: auto; cursor: pointer;" onclick="openBenefitsModal();" alt="Top 15 Hidden VA Benefits infographic">
+          </div>
+          <div class="text-container">
+            <p style="max-width: 500px; margin: 20px 0 0 40px;">
+              If standard VA treatment isn't helping enough, you may qualify for additional equipment, therapies, programs, devices, or specialty services that can improve your quality of life. Availability depends on your VA facility, provider recommendations, and medical necessity.
+            </p>
+            <ul style="max-width: 500px; margin-left: 40px; columns: 2;">
+              <li>Sound pillows for tinnitus, PTSD &amp; sleep</li>
+              <li>Weighted blankets</li>
+              <li>CPAP pillows for sleep apnea</li>
+              <li>TENS units for pain relief</li>
+              <li>Air purifiers / HEPA filters</li>
+              <li>Home telehealth tablets / iPads</li>
+              <li>Adaptive driving equipment</li>
+              <li>Lift chairs</li>
+              <li>Overbed computer workstations</li>
+              <li>Bed shaker / weather alert systems</li>
+              <li>Cooling vests for heat sensitivity</li>
+              <li>Red light therapy (where available)</li>
+              <li>Foreign Medical Program (FMP)</li>
+              <li>Battlefield acupuncture</li>
+              <li>Massage therapy (where available)</li>
+            </ul>
+            <p style="max-width: 500px; margin-left: 40px;">Many of these come through your PCP, Prosthetics/Brace Shop, Whole Health, Audiology, Sleep Medicine, PM&amp;R, Community Care, or Mental Health. <strong>Talk to your VA PCP</strong> to see if you qualify and get referrals based on your condition and VA eligibility criteria. Click the image to enlarge.</p>
+            <p style="max-width: 500px; margin-left: 40px;"><small>Infographic compiled by TJ Veterans. See our <a href="/tos.html#va-disclaimer">disclaimer</a> regarding VA-related materials shared on this site.</small></p>
+          </div>
+        </div>
+        <div id="benefitsModal" class="modal" onclick="closeBenefitsModal();">
+          <span class="close" onclick="closeBenefitsModal();">&times;</span>
+          <img class="modal-content" src="assets/img/hidden-va-benefits.jpg" alt="Top 15 Hidden VA Benefits infographic">
+        </div>
+      </div>
+    </section>
+
     <!-- The Difference TDIU Makes -->
     <section class="inner-page">
       <div class="container" id="tdiu">
@@ -640,6 +681,12 @@ Happy Father Day my brother.
 
     function closeShoesModal() {
       document.getElementById("shoesModal").style.display = "none";
+    }
+    function openBenefitsModal() {
+      document.getElementById("benefitsModal").style.display = "block";
+    }
+    function closeBenefitsModal() {
+      document.getElementById("benefitsModal").style.display = "none";
     }
   </script>
   <script>
