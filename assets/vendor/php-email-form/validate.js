@@ -27,21 +27,29 @@
 
       let formData = new FormData( thisForm );
 
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error);
-            }
+      // CHANGED FROM THE VENDOR FILE (webChamploo, Nov 2026). As shipped, a
+      // visitor whose browser blocks Google's bot check (ad blockers do)
+      // got "The reCaptcha javascript API url is not loaded!" and could not
+      // send the form at all: a lost customer. Now the token is attached
+      // when Google gives one within four seconds, and the form is sent
+      // without it otherwise. The server decides what a missing token means.
+      if (recaptcha && typeof grecaptcha !== "undefined") {
+        let sent = false;
+        const send = function (token) {
+          if (sent) return;
+          sent = true;
+          if (token) formData.set("recaptcha-response", token);
+          php_email_form_submit(thisForm, action, formData);
+        };
+        setTimeout(function () { send(null); }, 4000);
+        try {
+          grecaptcha.ready(function () {
+            grecaptcha
+              .execute(recaptcha, { action: "php_email_form_submit" })
+              .then(send, function () { send(null); });
           });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
+        } catch (error) {
+          send(null);
         }
       } else {
         php_email_form_submit(thisForm, action, formData);

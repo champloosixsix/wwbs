@@ -25,5 +25,7 @@ wc_form_handle([
         'message' => 'Message',
     ],
     'required' => ['name', 'email', 'subject', 'message'],
+    // The field the page's form script puts Google's bot-check token in.
+    'captcha' => 'recaptcha-response',
     'respond' => 'text',
 ]);

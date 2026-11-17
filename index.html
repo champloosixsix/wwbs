@@ -36,6 +36,23 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css?v=20260915" rel="stylesheet" />
+    <!-- The contact form's bot check: Google's floating badge is hidden and
+         the notice Google requires in its place sits under the Send button. -->
+    <style>
+      .grecaptcha-badge {
+        visibility: hidden !important;
+      }
+      .php-email-form .recaptcha-notice {
+        margin: 14px 0 0;
+        font-size: 12px;
+        line-height: 1.5;
+        opacity: 0.65;
+      }
+      .php-email-form .recaptcha-notice a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    </style>
   </head>
 
   <body>
@@ -653,6 +670,7 @@ Thank you Lew you are the very Best.
                 method="post"
                 role="form"
                 class="php-email-form"
+                data-recaptcha-site-key="6Ldu8yQuAAAAAEqy3aX5iRHdkX5ZB-RsEPTNtDZP"
               >
                 <div class="row">
                   <div class="col-md-6 form-group">
@@ -704,6 +722,13 @@ Thank you Lew you are the very Best.
                 </div>
                 <div class="text-center">
                   <button type="submit">Send Message</button>
+                  <p class="recaptcha-notice">
+                    This site is protected by reCAPTCHA and the Google
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                    and
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                    apply.
+                  </p>
                 </div>
               </form>
             </div>
@@ -809,7 +834,32 @@ Thank you Lew you are the very Best.
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- ?v=2: browsers holding the older copy must fetch this one, which
+         sends the form even when the bot check cannot load. -->
+    <script src="assets/vendor/php-email-form/validate.js?v=2"></script>
+    <!-- Google's bot check for the contact form (reCAPTCHA, score based: the
+         visitor never sees a puzzle). Loaded the first time someone touches
+         the form, not with the page, so it costs the page nothing in speed.
+         If it never loads (an ad blocker), the form still sends. -->
+    <script>
+      (function () {
+        var form = document.querySelector("form[data-recaptcha-site-key]");
+        if (!form) return;
+        var asked = false;
+        function load() {
+          if (asked) return;
+          asked = true;
+          var tag = document.createElement("script");
+          tag.src =
+            "https://www.google.com/recaptcha/api.js?render=" +
+            encodeURIComponent(form.getAttribute("data-recaptcha-site-key"));
+          tag.async = true;
+          document.head.appendChild(tag);
+        }
+        form.addEventListener("focusin", load);
+        form.addEventListener("pointerdown", load);
+      })();
+    </script>
     <script
       id="setmore_script"
       type="text/javascript"
