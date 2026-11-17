@@ -1,35 +1,29 @@
 <?php
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'info@wwbattlesystems.com';
+// The contact form.
+//
+// The work is done by wc-form/handler.php, the same file every site
+// webChamploo builds uses: it saves the message, hands it to the
+// webChamploo app (which checks it for spam and emails the branded copy),
+// and falls back to a plain email if the app cannot be reached. This file
+// only says what the form asks.
+//
+// The page's form script (assets/vendor/php-email-form/validate.js) treats
+// the plain word OK as success and shows anything else as the error, so
+// this form answers in text. That script and the page are unchanged.
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+declare(strict_types=1);
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+require __DIR__ . '/../wc-form/handler.php';
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
-?>
+wc_form_handle([
+    'name' => 'Contact form',
+    'fields' => [
+        'name' => 'Name',
+        'email' => 'Email',
+        'subject' => 'Subject',
+        'message' => 'Message',
+    ],
+    'required' => ['name', 'email', 'subject', 'message'],
+    'respond' => 'text',
+]);
