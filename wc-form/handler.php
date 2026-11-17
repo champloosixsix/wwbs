@@ -21,7 +21,7 @@
  * PHP 7.4+. No dependencies.
  */
 
-const WC_FORM_VERSION = '1.1';
+const WC_FORM_VERSION = '1.2';
 const WC_FORM_MAX_BODY = 65536;
 const WC_FORM_MAX_VALUE = 5000;
 const WC_FORM_CLOCK_WINDOW = 600;
@@ -38,7 +38,15 @@ const WC_FORM_CLOCK_WINDOW = 600;
  *   success   what to tell the visitor
  *   failure   what to tell them if it could neither be handed over, emailed
  *             nor saved (a place for the phone number)
- *   respond   'json' ({ok, success, message, error}) or 'text' ("OK" / the error)
+ *   respond   how the visitor's browser is answered:
+ *             'json'      {ok, success, message, error} (the default)
+ *             'text'      the plain word OK, or the error
+ *             'redirect'  sends the browser to success_url or failure_url,
+ *                         for forms posted without JavaScript
+ *             a function  function (bool $ok, string $message, int $status)
+ *                         that draws the answer itself, for a site whose
+ *                         form lands on its own "message sent" page
+ *   success_url, failure_url   where 'redirect' sends the browser
  */
 function wc_form_handle(array $form): void
 {
@@ -502,7 +510,21 @@ function wc_form_control(?array $config, string $raw): void
 
 function wc_form_respond(array $form, bool $ok, string $message, int $status = 200): void
 {
-    if (($form['respond'] ?? 'json') === 'text') {
+    $how = $form['respond'] ?? 'json';
+    if (!is_string($how) && is_callable($how)) {
+        // The site draws its own answer (a "message sent" page, say), and
+        // anything that page does on load, such as reporting the lead to
+        // Analytics, stays the site's own.
+        $how($ok, $message, $status);
+        return;
+    }
+    if ($how === 'redirect') {
+        // 303, so refreshing the page they land on cannot post the form again.
+        $to = (string) ($ok ? ($form['success_url'] ?? '/') : ($form['failure_url'] ?? ($form['success_url'] ?? '/')));
+        header('Location: ' . $to, true, 303);
+        return;
+    }
+    if ($how === 'text') {
         // The template form script many sites use reads the body, not the
         // status: the plain word OK is success, anything else is shown to
         // the visitor as the error. A non-200 would show a status line.
