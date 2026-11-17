@@ -21,7 +21,7 @@
  * PHP 7.4+. No dependencies.
  */
 
-const WC_FORM_VERSION = '1.2';
+const WC_FORM_VERSION = '1.3';
 const WC_FORM_MAX_BODY = 65536;
 const WC_FORM_MAX_VALUE = 5000;
 const WC_FORM_CLOCK_WINDOW = 600;
@@ -43,9 +43,17 @@ const WC_FORM_CLOCK_WINDOW = 600;
  *             'text'      the plain word OK, or the error
  *             'redirect'  sends the browser to success_url or failure_url,
  *                         for forms posted without JavaScript
- *             a function  function (bool $ok, string $message, int $status)
- *                         that draws the answer itself, for a site whose
- *                         form lands on its own "message sent" page
+ *             a function  function (bool $ok, string $message, int $status,
+ *                         string $outcome) that draws the answer itself,
+ *                         for a site whose form lands on its own "message
+ *                         sent" page. $outcome says what became of it, for
+ *                         a site that does something more with a real lead
+ *                         (a phone alert, say): 'sent' the app emailed the
+ *                         client; 'held' the app kept it back as spam;
+ *                         'test' it was us testing; 'fallback' the app was
+ *                         unreachable and this site emailed a plain copy;
+ *                         'saved' unreachable and only saved for later;
+ *                         'trap' the hidden field was filled; '' it failed.
  *   success_url, failure_url   where 'redirect' sends the browser
  */
 function wc_form_handle(array $form): void
@@ -81,7 +89,7 @@ function wc_form_handle(array $form): void
     // it worked so it does not try another way in.
     $honeypot = (string) ($form['honeypot'] ?? '');
     if ($honeypot !== '' && trim((string) ($input[$honeypot] ?? '')) !== '') {
-        wc_form_respond($form, true, (string) ($form['success'] ?? 'Thank you.'));
+        wc_form_respond($form, true, (string) ($form['success'] ?? 'Thank you.'), 200, 'trap');
         return;
     }
 
@@ -150,7 +158,10 @@ function wc_form_handle(array $form): void
             wc_form_queue_delete($dir, $payload['uid']);
             wc_form_flush($config, $dir);
         }
-        wc_form_respond($form, true, (string) ($form['success'] ?? 'Thank you. We will be in touch soon.'));
+        wc_form_respond(
+            $form, true, (string) ($form['success'] ?? 'Thank you. We will be in touch soon.'),
+            200, $answer['status'] !== '' ? $answer['status'] : 'sent'
+        );
         return;
     }
 
@@ -162,7 +173,10 @@ function wc_form_handle(array $form): void
         wc_form_queue_write($dir, $payload);
     }
     if ($mailed || $saved) {
-        wc_form_respond($form, true, (string) ($form['success'] ?? 'Thank you. We will be in touch soon.'));
+        wc_form_respond(
+            $form, true, (string) ($form['success'] ?? 'Thank you. We will be in touch soon.'),
+            200, $mailed ? 'fallback' : 'saved'
+        );
         return;
     }
     wc_form_respond($form, false, (string) ($form['failure'] ?? 'We could not send your message. Please call or email us instead.'), 500);
@@ -334,7 +348,7 @@ function wc_form_sign(string $secret, int $timestamp, string $body): string
     return hash_hmac('sha256', $timestamp . '.' . $body, $secret);
 }
 
-/** Hand one submission to the app. ['ok' => bool, 'why' => string]. */
+/** Hand one submission to the app. ['ok' => bool, 'why' => string, 'status' => what the app did with it]. */
 function wc_form_forward(array $config, array $payload): array
 {
     $body = (string) json_encode($payload);
@@ -379,7 +393,7 @@ function wc_form_forward(array $config, array $payload): array
     }
     $data = json_decode($text, true);
     if ($status >= 200 && $status < 300 && is_array($data) && !empty($data['ok'])) {
-        return ['ok' => true, 'why' => ''];
+        return ['ok' => true, 'why' => '', 'status' => (string) ($data['status'] ?? '')];
     }
     return ['ok' => false, 'why' => 'answered ' . $status];
 }
@@ -508,14 +522,14 @@ function wc_form_control(?array $config, string $raw): void
 
 // ─── Answering the visitor ───────────────────────────────────────────────────
 
-function wc_form_respond(array $form, bool $ok, string $message, int $status = 200): void
+function wc_form_respond(array $form, bool $ok, string $message, int $status = 200, string $outcome = ''): void
 {
     $how = $form['respond'] ?? 'json';
     if (!is_string($how) && is_callable($how)) {
         // The site draws its own answer (a "message sent" page, say), and
         // anything that page does on load, such as reporting the lead to
         // Analytics, stays the site's own.
-        $how($ok, $message, $status);
+        $how($ok, $message, $status, $outcome);
         return;
     }
     if ($how === 'redirect') {
