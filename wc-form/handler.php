@@ -21,7 +21,7 @@
  * PHP 7.4+. No dependencies.
  */
 
-const WC_FORM_VERSION = '1.3';
+const WC_FORM_VERSION = '1.4';
 const WC_FORM_MAX_BODY = 65536;
 const WC_FORM_MAX_VALUE = 5000;
 const WC_FORM_CLOCK_WINDOW = 600;
@@ -34,6 +34,13 @@ const WC_FORM_CLOCK_WINDOW = 600;
  *   roles     which post keys are the visitor's name/email/phone/message
  *             (default: keys of those names)
  *   honeypot  post key of the hidden field a person leaves empty
+ *   honeypot_flags   true = a filled hidden field does not drop the
+ *             submission; it is handed over with that noted, and the app
+ *             decides (hold it, or deliver it marked as possible spam). For
+ *             a client who would rather read spam than lose a request to
+ *             browser autofill filling the hidden field.
+ *   min_ms    ['field' => post key, 'ms' => 1500]: the page reports how
+ *             long the form was open; faster than this is noted the same way
  *   captcha   post key carrying the reCAPTCHA token, if the page has one
  *   success   what to tell the visitor
  *   failure   what to tell them if it could neither be handed over, emailed
@@ -87,10 +94,23 @@ function wc_form_handle(array $form): void
 
     // A person never sees this field. Anything in it is a bot, which is told
     // it worked so it does not try another way in.
+    // What this site noticed about the submission, for the app to weigh.
+    $flags = [];
     $honeypot = (string) ($form['honeypot'] ?? '');
     if ($honeypot !== '' && trim((string) ($input[$honeypot] ?? '')) !== '') {
-        wc_form_respond($form, true, (string) ($form['success'] ?? 'Thank you.'), 200, 'trap');
-        return;
+        if (empty($form['honeypot_flags'])) {
+            wc_form_respond($form, true, (string) ($form['success'] ?? 'Thank you.'), 200, 'trap');
+            return;
+        }
+        $flags[] = 'The hidden anti-spam field was filled in (browser autofill does this too).';
+    }
+    $minMs = (array) ($form['min_ms'] ?? []);
+    if (!empty($minMs['field'])) {
+        $elapsed = trim((string) ($input[$minMs['field']] ?? ''));
+        $floor = (int) ($minMs['ms'] ?? 1500);
+        if ($elapsed !== '' && ctype_digit($elapsed) && (int) $elapsed < $floor) {
+            $flags[] = 'The form was sent ' . (int) $elapsed . ' ms after it loaded.';
+        }
     }
 
     $dir = wc_form_data_dir();
@@ -145,6 +165,9 @@ function wc_form_handle(array $form): void
         'user_agent' => wc_form_clean($_SERVER['HTTP_USER_AGENT'] ?? '', 300),
         'handler_version' => WC_FORM_VERSION,
     ];
+    if ($flags) {
+        $payload['flags'] = $flags;
+    }
 
     // ---- save first, then try to hand it over
     $saved = $dir !== null && wc_form_queue_write($dir, $payload);
